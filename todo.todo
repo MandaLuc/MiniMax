@@ -1,0 +1,58 @@
+* Class:
+    Noeud:
+        ☐ . id 
+        ☐ . Position (x,y)
+        ☐ . Liste[Noeud_Voisin]
+        ☐ . Boolean {is occupe}
+
+     Police:
+        ☐ . Noeud 
+     Voleur:
+        ☐ . Noeud
+     Terrain:
+        ☐ . Boolean tour
+        ☐ . Liste[Noeud]
+        ☐ . Police[]
+        ☐ . Voleur
+     Jeu:
+        ☐ . Terrain
+
+* Fonction :
+     Noeud:
+        ☐ . GetVoisin()
+
+     Entite:
+        ☐ . moveTo(Noeud)
+        ☐ . getOpenWays() 
+
+     Police -> Entite: 
+        ☐ . MiniMax()
+     Voleur -> Entit:
+     Terrain:
+        ☐ . run() (change cas) 
+     Jeu:
+        ☐ . Terrain
+
+ Detail:
+    public int minMax (Terrain T,int d,Boolean isMax){
+        if(d == 0){
+            return len(Voleur.getOpenWays())
+        }else{
+            if (isMax) 
+                Noeud init = police.getNoeud() 
+                v = -inf
+                for way in self.getOpenWays()
+                    police.moveTo(way)
+                    v = max(v,self.minMax(T,d-,false))
+                    police.moveTo(init)
+                return v
+            else 
+                Noeud init = T.GetVoleur().getNoeud()
+                v = +inf
+                for way in self.getOpenWays()
+                    T.GetVoleur().moveTo(way)
+                    v = min(v,self.minMax(T,d-,true))
+                    T.GetVoleur().moveTo(init)
+                return v
+        } 
+    }
